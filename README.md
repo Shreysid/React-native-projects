@@ -1,7 +1,7 @@
 # React-native-projects
 Beginner react native projects for practice
 
-# Running React native on IOS simulator
+## Running React native on IOS simulator
 [Developer Forums](https://forums.developer.apple.com/forums/thread/678469)
 1. Install and open Xcode
 2. Choose preferences (⌘ + ,).
