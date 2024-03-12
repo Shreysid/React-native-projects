@@ -4,6 +4,7 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -39,6 +40,13 @@ export default function App() {
   return (
     <View style={Styles.container}>
       {/* This is where the heading appears */}
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1
+        }}
+        keyboardShouldPersistTaps='handled'
+      >
+
       <View style={Styles.heading}>
         <Text style={Styles.heading}>Today's Task</Text>
       </View>
@@ -56,6 +64,7 @@ export default function App() {
         })
         }
       </View>
+      </ScrollView>
       {/* This is where you write the tasks */}
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -67,6 +76,7 @@ export default function App() {
           value={task}
           onChangeText={(text) => setTask(text)}
         />
+       
 
         {/* Add button */}
         <TouchableOpacity activeOpacity={0.5} onPress={() => addText()}>
@@ -75,6 +85,7 @@ export default function App() {
           </View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
+      
     </View>
   );
 }
